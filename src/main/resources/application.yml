@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    password: root
+    username: Hwj19991205
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/simplewebdb?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    password: root
+    username: Hwj19991205
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://175.178.87.225:3306/simplewebdb?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+
