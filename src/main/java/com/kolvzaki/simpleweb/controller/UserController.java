@@ -12,4 +12,9 @@ public class UserController {
     public String pong(){
         return "pong";
     }
+
+    @GetMapping("/greet")
+    public String greet(){
+        return "Hello World!";
+    }
 }
