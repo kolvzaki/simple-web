@@ -12,9 +12,13 @@ spring:
       on-profile: dev
   datasource:
     password: root
-    username: Hwj19991205
-    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/simplewebdb?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
 ---
 spring:
   config:
@@ -25,4 +29,7 @@ spring:
     username: Hwj19991205
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://175.178.87.225:3306/simplewebdb?useUnicode=true&characterEncoding=UTF-8&useSSL=true
-
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
