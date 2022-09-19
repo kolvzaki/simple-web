@@ -4,7 +4,7 @@ networks:
 
 services:
   simple_web:
-    image: simple-web:0.0.1
+    image: simple-web:1.0.0
     container_name: simple-web
     ports:
       - "8080:8080"
