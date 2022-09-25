@@ -22,6 +22,6 @@ public class MenuService {
 
     public List<Menu> getRawMenu(List<Role> Roles){
         List<RoleMenu> roleMenus = roleMenuRepository.findAllByRoleIn(Roles);
-        return roleMenus.stream().map(RoleMenu::getMenu).toList();
+        return roleMenus.stream().map(RoleMenu::getMenu).collect(Collectors.toList());
     }
 }
