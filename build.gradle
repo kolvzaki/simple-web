@@ -7,7 +7,7 @@ plugins {
 group = 'com.kolvzaki'
 version = '1.0.0'
 sourceCompatibility = '18'
-targetCompatibility = '18'
+
 
 configurations {
     compileOnly {
