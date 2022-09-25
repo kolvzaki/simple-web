@@ -12,11 +12,10 @@ services:
     networks:
       - Simple_Web_Network
     volumes:
-      - /usr/local/mysql:/var/lib/mysql #映射mysql文件，每次重启加载此处文件
-      - /usr/local/mysql/config.cnf:/etc/mysql/my.cnf #挂载mysql配置文件
+      - ./usr/local/mysql:/var/lib/mysql #映射mysql文件，每次重启加载此处文件
+      - ./usr/local/mysql/config.cnf:/etc/mysql/my.cnf #挂载mysql配置文件
     environment:
       - "MYSQL_ROOT_PASSWORD=Hwj19991205"
-      - "MYSQL_DATABASE=simplewebdb"
       - TZ=Asia/Shanghai
       - LANG=en_US.UTF-8
   simple_web:
