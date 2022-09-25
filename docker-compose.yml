@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - Appointment_Network
+      - Simple_Web_Network
     volumes:
       - /usr/local/mysql:/var/lib/mysql #映射mysql文件，每次重启加载此处文件
       - /usr/local/mysql/config.cnf:/etc/mysql/my.cnf #挂载mysql配置文件
