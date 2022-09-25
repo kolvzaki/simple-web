@@ -4,6 +4,9 @@ server:
 spring:
   profiles:
     active: dev
+  jackson:
+    date-format: YYYY-MM-DD HH:mm:SS
+    time-zone: GMT+8
 
 ---
 spring:
@@ -18,7 +21,9 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
 ---
 spring:
   config:
@@ -33,3 +38,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
