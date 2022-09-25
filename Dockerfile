@@ -1,4 +1,4 @@
-FROM openjdk:18
+FROM openjdk:11
 ADD ./build/libs/simple-web-1.0.0.jar /simple-web-1.0.0.jar
 RUN bash -c 'touch /simple-web-0.0.1.jar'
 EXPOSE 8080
