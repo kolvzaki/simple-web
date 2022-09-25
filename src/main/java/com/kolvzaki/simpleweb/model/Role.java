@@ -43,13 +43,4 @@ public class Role {
     public int hashCode() {
         return getClass().hashCode();
     }
-
-    record RoleRecord(Role role){
-        public Integer id(){
-            return role.getId();
-        }
-        public String name(){
-            return role.getName();
-        }
-    }
 }
