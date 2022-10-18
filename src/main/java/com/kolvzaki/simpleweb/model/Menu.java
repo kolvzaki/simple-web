@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 @Entity
 @Getter

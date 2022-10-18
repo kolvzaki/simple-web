@@ -9,4 +9,8 @@ import java.util.List;
 public interface RoleMenuRepository extends JpaRepository<RoleMenu,Integer> {
 
     List<RoleMenu> findAllByRoleIn(List<Role> Roles);
+
+    List<RoleMenu> findByRole_IdIn(List<Integer> Roles);
+
+    List<RoleMenu> findByMenu_Id(Integer menuId);
 }
