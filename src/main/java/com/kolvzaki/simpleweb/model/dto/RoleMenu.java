@@ -21,12 +21,12 @@ public class RoleMenu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "menu_id",referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "menu_id", referencedColumnName = "id")
     private Menu menu;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role_id",referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
     @Override

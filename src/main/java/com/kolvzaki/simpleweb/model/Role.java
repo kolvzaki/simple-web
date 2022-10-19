@@ -28,8 +28,6 @@ public class Role {
 
     private Date createdTime;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Permission> permissions;
 
     @Override
     public boolean equals(Object o) {

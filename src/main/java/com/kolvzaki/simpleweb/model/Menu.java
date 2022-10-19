@@ -5,6 +5,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 
@@ -44,5 +45,9 @@ public class Menu {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public Menu(Integer id) {
+        this.id = id;
     }
 }

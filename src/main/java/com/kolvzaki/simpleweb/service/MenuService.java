@@ -4,10 +4,12 @@ import com.kolvzaki.simpleweb.model.Menu;
 import com.kolvzaki.simpleweb.model.Role;
 import com.kolvzaki.simpleweb.model.dto.MenuQuery;
 import com.kolvzaki.simpleweb.model.dto.RoleMenu;
+import com.kolvzaki.simpleweb.model.dto.RolesMenu;
 import com.kolvzaki.simpleweb.repository.MenuRepository;
 import com.kolvzaki.simpleweb.repository.RoleMenuRepository;
 import com.kolvzaki.simpleweb.repository.RoleRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
@@ -17,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class MenuService {
 
     @Resource
@@ -67,5 +70,13 @@ public class MenuService {
         List<RoleMenu> roleMenus = roleMenuRepository.findByMenu_Id(menuId);
         List<Integer> roleIds = roleMenus.stream().map(item->item.getRole().getId()).collect(Collectors.toList());
         return roleRepository.findAllById(roleIds);
+    }
+
+    public void saveMenusRole(final RolesMenu rolesMenu){
+        roleMenuRepository.deleteAllByMenu_Id(rolesMenu.getMenuId());
+        List<RoleMenu> saveBatch = new ArrayList<>();
+        Menu m = new Menu(rolesMenu.getMenuId());
+        rolesMenu.getMenuRoles().forEach(r-> saveBatch.add(new RoleMenu(0,m,r)));
+        roleMenuRepository.saveAll(saveBatch);
     }
 }
