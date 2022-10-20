@@ -79,4 +79,9 @@ public class MenuService {
         rolesMenu.getMenuRoles().forEach(r-> saveBatch.add(new RoleMenu(0,m,r)));
         roleMenuRepository.saveAll(saveBatch);
     }
+
+    public void createMenuItem(final Menu menu){
+        Menu save = menuRepository.save(menu);
+        System.out.println(save);
+    }
 }

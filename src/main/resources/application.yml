@@ -14,7 +14,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    password: root
+    password: Hwj19991205
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/simplewebdb?useUnicode=true&characterEncoding=UTF-8&useSSL=true

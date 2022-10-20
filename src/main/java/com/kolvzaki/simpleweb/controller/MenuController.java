@@ -39,7 +39,12 @@ public class MenuController {
     @PostMapping("/updateRoles")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateMenuRoles(@RequestBody RolesMenu rolesMenu){
-        System.out.println(rolesMenu);
         menuService.saveMenusRole(rolesMenu);
+    }
+
+    @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createMenuItem(@RequestBody Menu menu){
+        menuService.createMenuItem(menu);
     }
 }

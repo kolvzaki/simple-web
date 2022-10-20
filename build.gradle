@@ -21,6 +21,7 @@ repositories {
     maven {
         url 'https://maven.aliyun.com/repository/public/'
     }
+    mavenCentral()
 }
 
 dependencies {
@@ -31,7 +32,7 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'cn.hutool:hutool-all:5.8.7'
+    implementation 'cn.hutool:hutool-all:5.8.8'
 }
 
 tasks.named('test') {
