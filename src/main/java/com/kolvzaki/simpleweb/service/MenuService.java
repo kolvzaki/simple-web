@@ -15,6 +15,7 @@ import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -81,7 +82,7 @@ public class MenuService {
     }
 
     public void createMenuItem(final Menu menu){
-        Menu save = menuRepository.save(menu);
-        System.out.println(save);
+        menu.setCreatedTime(new Date());
+        menuRepository.save(menu);
     }
 }
