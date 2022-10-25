@@ -85,4 +85,20 @@ public class MenuService {
         menu.setCreatedTime(new Date());
         menuRepository.save(menu);
     }
+
+    public void updateMenuItem(final Menu menu){
+        menu.setCreatedTime(new Date());
+        menuRepository.save(menu);
+    }
+    public void deleteMenuItem(final Integer menuId){
+        roleMenuRepository.deleteAllByMenu_Id(menuId);
+        roleMenuRepository.deleteAllByMenu_Pid(menuId);
+        menuRepository.deleteById(menuId);
+        menuRepository.deleteAllByPid(menuId);
+    }
+
+    public void deleteBatchMenuItem(final List<Integer> menuIds){
+        roleMenuRepository.deleteAllByMenu_IdIn(menuIds);
+        menuRepository.deleteAllById(menuIds);
+    }
 }

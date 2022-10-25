@@ -17,4 +17,8 @@ public interface RoleMenuRepository extends JpaRepository<RoleMenu,Integer> {
 
     @Modifying
     void deleteAllByMenu_Id(Integer menuId);
+    @Modifying
+    void deleteAllByMenu_IdIn(List<Integer> menuIds);
+    @Modifying
+    void deleteAllByMenu_Pid(Integer pid);
 }

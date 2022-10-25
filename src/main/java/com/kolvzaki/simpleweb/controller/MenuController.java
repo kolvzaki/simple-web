@@ -47,4 +47,22 @@ public class MenuController {
     public void createMenuItem(@RequestBody Menu menu){
         menuService.createMenuItem(menu);
     }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateMenuItem(@RequestBody Menu menu){
+        menuService.updateMenuItem(menu);
+    }
+
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMenuItem(@RequestParam Integer menuId){
+        menuService.deleteMenuItem(menuId);
+    }
+
+    @DeleteMapping("/delete/batch")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBatchMenuItem(@RequestBody List<Integer> ids){
+        menuService.deleteBatchMenuItem(ids);
+    }
 }
